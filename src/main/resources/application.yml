@@ -1,0 +1,45 @@
+#server:
+#  port: 9000
+
+#对象/map集合
+user:
+    name: Tom
+    age: 20
+    address: Beijing
+
+#定义数组/list/set
+hobby:
+  - Java
+  - C
+  - game
+  - sport
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/studydb
+    username: root
+    password: '0205006'
+  servlet:
+    multipart:
+      max-file-size=10MB
+      max-request-size=10MB
+
+
+
+mybatis:
+    configuration:
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+        map-underscore-to-camel-case: true
+
+
+aliyun:
+    oss:
+        endpoint: https://oss-cn-beijing.aliyuncs.com
+        accessKeyId: LTAI5tHzvKtnTxHmyXDNpbS3
+        accessKeySecret: 5CvIwAMCNACoWo3f9x7LawU1UmLrzl
+        bucketName: springboot001
+
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionalManager: debug
