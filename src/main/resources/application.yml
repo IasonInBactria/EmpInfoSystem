@@ -36,8 +36,7 @@ mybatis:
 aliyun:
     oss:
         endpoint: https://oss-cn-beijing.aliyuncs.com
-        accessKeyId: LTAI5tHzvKtnTxHmyXDNpbS3
-        accessKeySecret: 5CvIwAMCNACoWo3f9x7LawU1UmLrzl
+
         bucketName: springboot001
 
 logging:
