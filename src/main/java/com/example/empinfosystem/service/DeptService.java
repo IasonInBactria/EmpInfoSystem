@@ -9,6 +9,10 @@ public interface DeptService {
      * @return 全部数据
      */
     List<Dept> list();
+
+    /**
+     * @param id
+     */
     void delete(Integer id);
     void add(Dept dept);
 }

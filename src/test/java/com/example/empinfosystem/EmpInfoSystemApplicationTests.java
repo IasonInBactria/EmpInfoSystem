@@ -1,9 +1,11 @@
 package com.example.empinfosystem;
 
+import com.example.empinfosystem.service.DeptService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Date;
@@ -16,6 +18,9 @@ class EmpInfoSystemApplicationTests {
     @Test
     void contextLoads() {
     }
+
+    @Autowired
+    private DeptService deptService;
 
     @Test
     public void testGenJwt(){
@@ -34,5 +39,10 @@ class EmpInfoSystemApplicationTests {
                 .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiVHJvdHNreSIsImlkIjoxLCJleHAiOjE2ODk2NTQwOTN9.3en6nugxrV5S7s483FLch_xcJtKYu_s_MgVUEA33zLY")
                 .getBody();
         System.out.println(claim);
+    }
+
+    @Test
+    public void testAopDelete(){
+        deptService.delete(13);
     }
 }
