@@ -11,6 +11,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,8 @@ import java.util.Arrays;
 @Slf4j
 public class LogAspect {
 
+    @Autowired
+    private ApplicationContext applicationContext;
     @Autowired
     private HttpServletRequest httpServletRequest;
     @Autowired
@@ -43,6 +46,8 @@ public class LogAspect {
         Object result = proceedingJoinPoint.proceed();
         String returnValue = JSONObject.toJSONString(result);
         Long end = System.currentTimeMillis();
+
+        System.out.println("http请求信息:" + httpServletRequest);
 
         //耗时
         Long costTime = end - begin;
